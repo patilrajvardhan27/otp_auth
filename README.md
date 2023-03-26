@@ -1,4 +1,4 @@
-# jd_sc
+# auth_otp
 
 A new Flutter project.
 
