@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 class MyPhone extends StatefulWidget {
   const MyPhone({Key? key}) : super(key: key);
 
+  static String verify = "";
+
   @override
   State<MyPhone> createState() => _MyPhoneState();
 }
@@ -115,6 +117,7 @@ class _MyPhoneState extends State<MyPhone> {
                             (PhoneAuthCredential credential) {},
                         verificationFailed: (FirebaseAuthException e) {},
                         codeSent: (String verificationId, int? resendToken) {
+                          MyPhone.verify = verificationId;
                           Navigator.pushNamed(context, 'verify');
                         },
                         codeAutoRetrievalTimeout: (String verificationId) {},
